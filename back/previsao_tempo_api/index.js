@@ -16,11 +16,13 @@ const openWeatherMapClient = axios.create({
 })
 
 app.get('/search', async (request, response) => {
-
+    
+    const coords = request.query.query.replaceAll(" ", "").split(",")
+    
     const result = await openWeatherMapClient.get('/forecast', {
         params: {
-            lat: request.query.lat,
-            lon: request.query.long
+            lat: coords[0],
+            lon: coords[1]
         }
     }).catch((err) => {
         response.status(err.status).json({
@@ -38,7 +40,6 @@ app.get('/search', async (request, response) => {
             let weatherDataFromDay = weatherData.slice(i, i+8)
             let temp_min = 100
             let temp_max = 0
-            let date = new Date(weatherData[i].dt * 1000).toLocaleDateString("pt-Br")
 
             weatherDataFromDay.map(function(value) {
                 
