@@ -35,6 +35,8 @@ app.get('/search', async (request, response) => {
 
     for(i = 0; i < weatherData.length; i+=8){
 
+        let date = new Date(weatherData[i].dt * 1000).toLocaleDateString("pt-Br")
+
         if(request.query.data_type == "temp_min_max"){
 
             let weatherDataFromDay = weatherData.slice(i, i+8)
