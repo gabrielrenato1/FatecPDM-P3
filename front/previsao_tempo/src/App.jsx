@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Busca from './components/Busca'
 
 function App() {

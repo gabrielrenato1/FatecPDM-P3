@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { InputText } from 'primereact/inputtext'
 import { RadioButton } from 'primereact/radiobutton';
 import openweatherClient from '../utils/openweatherClient'
+import Listar from './Listar'
 
 function Busca() {
 
@@ -65,6 +66,9 @@ function Busca() {
                     <label htmlFor="buscaTipoHumidity" className="ml-2">Humidade e Pressão Atmosférica</label>
                 </div>
             </div>
+
+            <Listar previsoes={resultados}/>
+
         </div>
     )
 
