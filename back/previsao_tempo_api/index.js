@@ -58,7 +58,8 @@ app.get('/search', async (request, response) => {
             responseData.push({
                 temp_min: temp_min,
                 temp_max: temp_max,
-                date: date
+                date: date,
+                description: weatherData[i].weather[0].description
             })
 
         }else if(request.query.data_type == "humidity_atmosferic_pressure"){
@@ -66,7 +67,8 @@ app.get('/search', async (request, response) => {
             responseData.push({
                 humidity: weatherData[i].main.humidity,
                 pressure: weatherData[i].main.pressure,
-                date: date
+                date: date,
+                description: weatherData[i].weather[0].description
             })
 
         }
