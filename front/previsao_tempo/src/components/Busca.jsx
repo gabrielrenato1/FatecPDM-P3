@@ -25,7 +25,17 @@ const Busca = () => {
 
         }
 
-        if(termoBusca.length > 2 && termoBusca.includes(",") && tipoBusca !== null){
+        let termoBuscaValido = false
+        
+        termoBusca.split(",").map(function(value) {
+            if(termoBusca.split(",").length === 2 && value !== ""){
+                termoBuscaValido = true
+            }else{
+                termoBuscaValido = false
+            }
+        })
+
+        if(termoBusca.length > 2 && termoBuscaValido && tipoBusca !== null){
 
             if(resultados.length === 0){
                 fazerBusca()
