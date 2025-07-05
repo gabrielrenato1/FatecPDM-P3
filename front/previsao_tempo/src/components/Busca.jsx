@@ -4,7 +4,7 @@ import { RadioButton } from 'primereact/radiobutton';
 import openweatherClient from '../utils/openweatherClient'
 import Listar from './Listar'
 
-function Busca() {
+const Busca = () => {
 
     const [termoBusca, setTermoBusca] = useState("-23.561167625063238, -46.65648357473211")
     const [tipoBusca, setTipoBusca] = useState(null)
